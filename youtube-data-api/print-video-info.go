@@ -10,7 +10,7 @@ import (
 	"google.golang.org/api/youtube/v3"
 )
 
-const key = "AIzaSyAS1rtt0HrtBBAcww6HsrNnHd5nTT_hH_k"
+const key = "your key"
 
 func newYoutubeService() *youtube.Service {
 	client := &http.Client{

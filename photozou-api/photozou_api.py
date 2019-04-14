@@ -42,9 +42,9 @@ def get_image_url_list(query, n):
     for resource in resources['info']['photo']:
         url = resource['image_url']
         # オリジナル
-        #url = resource['original_image_url']
+        # url = resource['original_image_url']
         # サムネイル
-        #url = resource['thumbnail_image_url']
+        # url = resource['thumbnail_image_url']
         url_list.append(url)
     return url_list
 

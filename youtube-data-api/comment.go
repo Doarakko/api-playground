@@ -22,6 +22,7 @@ func getComments(videoID string) []*youtube.CommentThread {
 	call := service.CommentThreads.List("id,snippet").
 		VideoId(videoID).
 		Order("relevance").
+		//SearchTerms("草").
 		MaxResults(10)
 	response, err := call.Do()
 	if err != nil {

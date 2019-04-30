@@ -45,6 +45,7 @@ func newOAuthClient() *http.Client {
 	return client
 }
 
+// https://github.com/googleapis/google-api-go-client
 func osUserCacheDir() string {
 	switch runtime.GOOS {
 	case "darwin":
@@ -56,6 +57,7 @@ func osUserCacheDir() string {
 	return "."
 }
 
+// https://github.com/googleapis/google-api-go-client
 func tokenCacheFile(config *oauth2.Config) string {
 	hash := fnv.New32a()
 	hash.Write([]byte(config.ClientID))
@@ -65,6 +67,7 @@ func tokenCacheFile(config *oauth2.Config) string {
 	return filepath.Join(osUserCacheDir(), url.QueryEscape(fn))
 }
 
+// https://github.com/googleapis/google-api-go-client
 func tokenFromFile(file string) (*oauth2.Token, error) {
 	f, err := os.Open(file)
 	if err != nil {
@@ -75,6 +78,7 @@ func tokenFromFile(file string) (*oauth2.Token, error) {
 	return t, err
 }
 
+// https://github.com/googleapis/google-api-go-client
 func saveToken(file string, token *oauth2.Token) {
 	f, err := os.Create(file)
 	if err != nil {
@@ -85,6 +89,7 @@ func saveToken(file string, token *oauth2.Token) {
 	gob.NewEncoder(f).Encode(token)
 }
 
+// https://github.com/googleapis/google-api-go-client
 func tokenFromWeb(ctx context.Context, config *oauth2.Config) *oauth2.Token {
 	ch := make(chan string)
 	randState := fmt.Sprintf("st%d", time.Now().UnixNano())
@@ -123,6 +128,7 @@ func tokenFromWeb(ctx context.Context, config *oauth2.Config) *oauth2.Token {
 	return token
 }
 
+// https://github.com/googleapis/google-api-go-client
 func openURL(url string) {
 	try := []string{"xdg-open", "google-chrome", "open"}
 	for _, bin := range try {
@@ -155,8 +161,10 @@ func main() {
 	if err != nil {
 		log.Fatal("Error loading .env file")
 	}
-
-	comment("r3vcSMUVYHA", "おもしろい！")
+	// printChannelInfo("UC4YaOt1yT-ZeyB0OmxHgolA")
+	// printVideoInfo("r3vcSMUVYHA")
+	// printComments(getComments("r3vcSMUVYHA"))
+	// comment("r3vcSMUVYHA", "おもしろい！")
 
 	for _, item := range getComments("r3vcSMUVYHA") {
 		commentID := item.Snippet.TopLevelComment.Id

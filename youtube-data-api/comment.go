@@ -45,11 +45,11 @@ func comment(videoID string, message string) {
 		},
 	}
 	call := service.CommentThreads.Insert("id,snippet", commentThread)
-	response, err := call.Do()
+	_, err := call.Do()
 	if err != nil {
 		log.Fatalf("%v", err)
 	}
-	log.Printf("Comment to %v, from %v\n", videoID, response.Id)
+	log.Printf("Comment to %v\n", videoID)
 }
 
 func reply(commentID string, message string) {
@@ -59,13 +59,26 @@ func reply(commentID string, message string) {
 			TextOriginal: message,
 		},
 	}
-
-	client := newOAuthClient()
-	service := newYoutubeService(client)
+	service := newYoutubeService(newOAuthClient())
 	call := service.Comments.Insert("id,snippet", reply)
-	response, err := call.Do()
+	_, err := call.Do()
 	if err != nil {
 		log.Fatalf("%v", err)
 	}
-	log.Printf("Reply to %v from %v\n", commentID, response.Id)
+	log.Printf("Success\n")
+}
+
+func deleteComment(commentID string) {
+	service := newYoutubeService(newOAuthClient())
+	call := service.Comments.Delete(commentID)
+	err := call.Do()
+	if err != nil {
+		log.Fatalf("%v", err)
+	}
+	log.Printf("Success\n")
+}
+
+// TODO
+func deleteAllComment(channelID string, videoID string) {
+	// Delete all comment include reply
 }

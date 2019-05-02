@@ -164,14 +164,14 @@ func main() {
 	// printChannelInfo("UC4YaOt1yT-ZeyB0OmxHgolA")
 	// printVideoInfo("r3vcSMUVYHA")
 	// printComments(getComments("r3vcSMUVYHA"))
-	// comment("r3vcSMUVYHA", "おもしろい！")
+	comment("enter video id", "おもしろい！")
 
-	for _, item := range getComments("r3vcSMUVYHA") {
-		commentID := item.Snippet.TopLevelComment.Id
-		likeCnt := item.Snippet.TopLevelComment.Snippet.LikeCount
-		log.Printf("%v %v\n", item.Snippet.TopLevelComment.Snippet.TextDisplay, likeCnt)
-		if likeCnt >= 200 {
-			reply(commentID, "いいね！")
-		}
-	}
+	// for _, item := range getComments("enter video id") {
+	// 	likeCnt := item.Snippet.TopLevelComment.Snippet.LikeCount
+
+	// 	if likeCnt >= 100 {
+	// 		reply(item.Snippet.TopLevelComment.Id, "いいね！")
+	// 		log.Printf("Reply to %v\n", item.Snippet.TopLevelComment.Snippet.TextDisplay)
+	// 	}
+	// }
 }

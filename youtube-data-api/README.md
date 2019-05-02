@@ -5,6 +5,8 @@
     - google.golang.org/api/googleapi/transport
     - google.golang.org/api/youtube/v3
 - YouTube Data API
+- Google OAuth Client ID
+    - To use insert or reply comment
 
 ## Usage in Golang
 1. Clone code

@@ -103,6 +103,4 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-twitter-api/
-
 youtube-data-api/main

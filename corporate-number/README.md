@@ -59,8 +59,7 @@ docker exec -it corporate-number-app python main.py 中日ドラゴンズ
 ```sh
 usage: main.py [-h] [-m {1,2}] [-t {1,2,3}] [-c {1,2}] q
 
-各引数、レスポンスの詳細な仕様はこちらを参照してください。https://www.houjin-bangou.nta.go.jp/documents/k-web-api-kinou-
-gaiyo.pdf
+各引数、レスポンスの詳細な仕様はこちらを参照してください。https://www.houjin-bangou.nta.go.jp/documents/k-web-api-kinou-gaiyo.pdf
 
 positional arguments:
   q           検索クエリ

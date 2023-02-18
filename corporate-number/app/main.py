@@ -30,7 +30,8 @@ def run(q: str, mode: int, target: int, change: int):
 
     d = xmltodict.parse(response.text)
 
-    path = f"output/{q}.json"
+    filename = q.replace(" ", "_")
+    path = f"output/{filename}.json"
     with open(path, "w") as f:
         json.dump(d, f, indent=4, ensure_ascii=False)
 

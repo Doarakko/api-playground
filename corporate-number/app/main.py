@@ -40,7 +40,7 @@ def run(q: str, mode: int, target: int, change: int):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="各引数、レスポンスの詳細な仕様はこちらを参照してください。https://www.houjin-bangou.nta.go.jp/documents/k-web-api-kinou-gaiyo.pdf"
+        description="各引数、レスポンスの詳細な仕様はこちらを確認してください。https://www.houjin-bangou.nta.go.jp/documents/k-web-api-kinou-gaiyo.pdf"
     )
 
     parser.add_argument("q", type=str, help="検索クエリ")

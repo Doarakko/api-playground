@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  app:
+    container_name: corporate-number-app
+    build: ./app
+    env_file:
+      - .env
+    volumes:
+      - ./app:/app
+    tty: true
+ 

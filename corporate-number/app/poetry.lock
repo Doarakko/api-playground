@@ -109,17 +109,6 @@ docs = ["furo (>=2022.12.7)", "proselint (>=0.13)", "sphinx-autodoc-typehints (>
 test = ["appdirs (==1.4.4)", "covdefaults (>=2.2.2)", "pytest-cov (>=4)", "pytest-mock (>=3.10)", "pytest (>=7.2.1)"]
 
 [[package]]
-name = "python-dotenv"
-version = "0.21.1"
-description = "Read key-value pairs from a .env file and set them as environment variables"
-category = "main"
-optional = false
-python-versions = ">=3.7"
-
-[package.extras]
-cli = ["click (>=5.0)"]
-
-[[package]]
 name = "requests"
 version = "2.28.2"
 description = "Python HTTP for Humans."
@@ -177,7 +166,7 @@ python-versions = ">=3.4"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "86c1f9f5f83c7c1abbc543f2078fb6ac9eca6b71c13886a438e6d760b889a6c1"
+content-hash = "428319247d74017a8237102d133ee18dc6fdd8d2f01ca22d6f7652785c1406ad"
 
 [metadata.files]
 black = []
@@ -194,7 +183,6 @@ mypy-extensions = []
 packaging = []
 pathspec = []
 platformdirs = []
-python-dotenv = []
 requests = []
 tomli = [
     {file = "tomli-2.0.1-py3-none-any.whl", hash = "sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc"},

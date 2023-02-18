@@ -7,7 +7,6 @@ authors = ["peperoncino <2wua4nlyi@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.9"
 requests = "^2.28.2"
-python-dotenv = "^0.21.1"
 mojimoji = "^0.0.12"
 xmltodict = "^0.13.0"
 

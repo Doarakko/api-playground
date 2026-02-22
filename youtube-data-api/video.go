@@ -8,7 +8,7 @@ import (
 
 func printVideoInfo(videoID string) {
 	service := newYoutubeService(newClient())
-	call := service.Videos.List("id,snippet,Statistics").
+	call := service.Videos.List([]string{"id", "snippet", "statistics"}).
 		Id(videoID).
 		MaxResults(1)
 	response, err := call.Do()
@@ -50,7 +50,7 @@ func printVideoInfo(videoID string) {
 
 func getVideoCategory(categoryID string) string {
 	service := newYoutubeService(newClient())
-	call := service.VideoCategories.List("id,snippet").
+	call := service.VideoCategories.List([]string{"id", "snippet"}).
 		Id(categoryID)
 	response, err := call.Do()
 	if err != nil {

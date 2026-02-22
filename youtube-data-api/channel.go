@@ -7,7 +7,7 @@ import (
 
 func printChannelInfo(channelID string) {
 	service := newYoutubeService(newClient())
-	call := service.Channels.List("snippet,contentDetails,statistics").
+	call := service.Channels.List([]string{"snippet", "contentDetails", "statistics"}).
 		Id(channelID).
 		MaxResults(1)
 	response, err := call.Do()

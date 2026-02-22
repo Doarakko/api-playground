@@ -19,7 +19,7 @@ func printComments(comments []*youtube.CommentThread) {
 
 func getComments(videoID string) []*youtube.CommentThread {
 	service := newYoutubeService(newClient())
-	call := service.CommentThreads.List("id,snippet").
+	call := service.CommentThreads.List([]string{"id", "snippet"}).
 		VideoId(videoID).
 		Order("relevance").
 		//SearchTerms("草").
@@ -44,7 +44,7 @@ func comment(videoID string, message string) {
 			},
 		},
 	}
-	call := service.CommentThreads.Insert("id,snippet", commentThread)
+	call := service.CommentThreads.Insert([]string{"id", "snippet"}, commentThread)
 	_, err := call.Do()
 	if err != nil {
 		log.Fatalf("%v", err)
@@ -60,7 +60,7 @@ func reply(commentID string, message string) {
 		},
 	}
 	service := newYoutubeService(newOAuthClient())
-	call := service.Comments.Insert("id,snippet", reply)
+	call := service.Comments.Insert([]string{"id", "snippet"}, reply)
 	_, err := call.Do()
 	if err != nil {
 		log.Fatalf("%v", err)

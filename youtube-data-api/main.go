@@ -161,10 +161,13 @@ func main() {
 	if err != nil {
 		log.Fatal("Error loading .env file")
 	}
+
+	searchVideosByDescription("go", 100)
+
 	// printChannelInfo("UC4YaOt1yT-ZeyB0OmxHgolA")
 	// printVideoInfo("r3vcSMUVYHA")
 	// printComments(getComments("r3vcSMUVYHA"))
-	comment("enter video id", "おもしろい！")
+	// comment("enter video id", "おもしろい！")
 
 	// for _, item := range getComments("enter video id") {
 	// 	likeCnt := item.Snippet.TopLevelComment.Snippet.LikeCount
